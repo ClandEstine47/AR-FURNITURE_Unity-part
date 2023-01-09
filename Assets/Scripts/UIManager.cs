@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     private PointerEventData pData;
     private EventSystem eventSystem;
     public Transform selectionPoint;
+    [SerializeField]
+    public Button backBtn;
 
     private static UIManager instance;
     public static UIManager Instance
@@ -32,12 +34,17 @@ public class UIManager : MonoBehaviour
         pData = new PointerEventData(eventSystem);
 
         pData.position = selectionPoint.position;
+
+        backBtn.onClick.AddListener(() =>
+        {
+            Application.Quit();
+        });
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public bool OnEntered(GameObject button)
@@ -47,7 +54,7 @@ public class UIManager : MonoBehaviour
 
         foreach (RaycastResult result in results)
         {
-            if(result.gameObject == button)
+            if (result.gameObject == button)
             {
                 return true;
             }

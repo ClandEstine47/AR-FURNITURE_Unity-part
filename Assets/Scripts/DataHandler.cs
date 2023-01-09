@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //using UnityEngine.AddressableAssets;
 //using System.Threading.Tasks;
 
@@ -13,8 +14,10 @@ public class DataHandler : MonoBehaviour
     private GameObject buttonContainer;
     [SerializeField]
     private List<Item> items;
+    public Text textElement;
+    public string ReceivedMessagFromAndroid;
     //[SerializeField]
-   // private string label;
+    // private string label;
 
     private int curretn_id = 0;
 
@@ -23,33 +26,40 @@ public class DataHandler : MonoBehaviour
     {
         get
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = FindObjectOfType<DataHandler>();
             }
             return instance;
         }
     }
+    public void ReceivedMessage(string message)
+    {
+        Debug.Log("Received message: " + message);
+        ReceivedMessagFromAndroid = message;
+        textElement.text = message;
+    }
 
     private void Awake()
     {
-        LoadItems();
-       // await Get(label);
+        LoadItems(ReceivedMessagFromAndroid);
+        // await Get(label);
         CreateButton();
     }
-    void LoadItems()
+
+    void LoadItems(string objname)
     {
         var items_obj = Resources.LoadAll("Items", typeof(Item));
-        foreach(var item in items_obj)
+        foreach (var item in items_obj)
         {
             items.Add(item as Item);
         }
-    } 
+    }
 
-    
+
     void CreateButton()
     {
-        foreach(Item i in items)
+        foreach (Item i in items)
         {
             ButtonManager bm = Instantiate(buttonPrefab, buttonContainer.transform);
             bm.ItemId = curretn_id;
@@ -68,14 +78,14 @@ public class DataHandler : MonoBehaviour
         return furniture;
     }
 
-  /*  public async Task Get(string label)
-    {
-        var locations = await Addressables.LoadResourceLocationsAsync(label).Task;
-        foreach(var location in locations)
-        {
-            var obj = await Addressables.LoadAssetAsync<Item>(location).Task;
-            items.Add(obj);
-        }
-    }
-  */
+    /*  public async Task Get(string label)
+      {
+          var locations = await Addressables.LoadResourceLocationsAsync(label).Task;
+          foreach(var location in locations)
+          {
+              var obj = await Addressables.LoadAssetAsync<Item>(location).Task;
+              items.Add(obj);
+          }
+      }
+    */
 }
