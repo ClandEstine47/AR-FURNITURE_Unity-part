@@ -3049,8 +3049,8 @@ inline DataHandler_tC9B698E50607A524E8C6810652F969A3B52F1CC3* Object_FindObjectO
 }
 // System.String System.String::Concat(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_mAF2CE02CC0CB7460753D0A1A91CCF2B1E9804C5D (String_t* ___str00, String_t* ___str11, const RuntimeMethod* method) ;
-// System.Void DataHandler::LoadItems(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataHandler_LoadItems_m749ED261025BEBD6ACF99CB81162AE8929E3D744 (DataHandler_tC9B698E50607A524E8C6810652F969A3B52F1CC3* __this, String_t* ___objname0, const RuntimeMethod* method) ;
+// System.Void DataHandler::LoadItems()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataHandler_LoadItems_m5546F1EFDF981E4E7B5B708889AC290AED656FA4 (DataHandler_tC9B698E50607A524E8C6810652F969A3B52F1CC3* __this, const RuntimeMethod* method) ;
 // System.Void DataHandler::CreateButton()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataHandler_CreateButton_m2B7BD253BA7C66AF567BBCF47524C297C98B99C1 (DataHandler_tC9B698E50607A524E8C6810652F969A3B52F1CC3* __this, const RuntimeMethod* method) ;
 // System.Type System.Type::GetTypeFromHandle(System.RuntimeTypeHandle)
@@ -4193,17 +4193,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataHandler_ReceivedMessage_m14ED245F369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataHandler_Awake_mE1CAD485223F24AFF4062AD256DF383C50DD04CE (DataHandler_tC9B698E50607A524E8C6810652F969A3B52F1CC3* __this, const RuntimeMethod* method) 
 {
 	{
-		// LoadItems(ReceivedMessagFromAndroid);
-		String_t* L_0 = __this->___ReceivedMessagFromAndroid_9;
-		DataHandler_LoadItems_m749ED261025BEBD6ACF99CB81162AE8929E3D744(__this, L_0, NULL);
+		// LoadItems();
+		DataHandler_LoadItems_m5546F1EFDF981E4E7B5B708889AC290AED656FA4(__this, NULL);
 		// CreateButton();
 		DataHandler_CreateButton_m2B7BD253BA7C66AF567BBCF47524C297C98B99C1(__this, NULL);
 		// }
 		return;
 	}
 }
-// System.Void DataHandler::LoadItems(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataHandler_LoadItems_m749ED261025BEBD6ACF99CB81162AE8929E3D744 (DataHandler_tC9B698E50607A524E8C6810652F969A3B52F1CC3* __this, String_t* ___objname0, const RuntimeMethod* method) 
+// System.Void DataHandler::LoadItems()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataHandler_LoadItems_m5546F1EFDF981E4E7B5B708889AC290AED656FA4 (DataHandler_tC9B698E50607A524E8C6810652F969A3B52F1CC3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)

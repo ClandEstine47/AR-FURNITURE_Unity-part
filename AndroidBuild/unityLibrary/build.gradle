@@ -11,8 +11,7 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion '30.0.2'
+    buildToolsVersion '33.0.1'
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -21,7 +20,7 @@ android {
 
     defaultConfig {
         minSdkVersion 24
-        targetSdkVersion 30
+        targetSdkVersion 31
         ndk {
             abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
@@ -83,6 +82,8 @@ def BuildIl2Cpp(String workingDir, String configuration, String architecture, St
 }
 
 android {
+
+    compileSdk 33
     task BuildIl2CppTask {
         doLast {
               BuildIl2Cpp(projectDir.toString().replaceAll('\\\\', '/'), 'Release', 'armv7', 'armeabi-v7a', [  ] as String[]);
@@ -100,6 +101,7 @@ android {
             jni.srcDirs = ["src/main/Il2CppOutputProject"]
         }
     }
+    ndkVersion '21.3.6528147'
 }
 
 

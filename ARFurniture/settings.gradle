@@ -1,3 +1,5 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -5,12 +7,20 @@ pluginManagement {
         mavenCentral()
     }
 }
+
+rootProject.name = "AR Furniture"
+include ':app'
+include ':unityLibrary'
+project(':unityLibrary').projectDir=new File('..\\AndroidBuild\\unityLibrary')
+
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs "${project(':unityLibrary').projectDir}/libs"
+        }
     }
 }
-rootProject.name = "AR Furniture"
-include ':app'

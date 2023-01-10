@@ -42,12 +42,12 @@ public class DataHandler : MonoBehaviour
 
     private void Awake()
     {
-        LoadItems(ReceivedMessagFromAndroid);
+        LoadItems();
         // await Get(label);
         CreateButton();
     }
 
-    void LoadItems(string objname)
+    void LoadItems()
     {
         var items_obj = Resources.LoadAll("Items", typeof(Item));
         foreach (var item in items_obj)

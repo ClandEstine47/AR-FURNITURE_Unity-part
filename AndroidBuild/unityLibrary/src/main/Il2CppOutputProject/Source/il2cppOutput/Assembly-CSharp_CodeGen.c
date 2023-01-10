@@ -62,8 +62,8 @@ extern void DataHandler_get_Instance_m9FCB9BE5B72BE8E6D3594F83D3E6040876CB5530 (
 extern void DataHandler_ReceivedMessage_m14ED245F369FBD2A95B6DB5B72B7A84F37ADE8F0 (void);
 // 0x00000019 System.Void DataHandler::Awake()
 extern void DataHandler_Awake_mE1CAD485223F24AFF4062AD256DF383C50DD04CE (void);
-// 0x0000001A System.Void DataHandler::LoadItems(System.String)
-extern void DataHandler_LoadItems_m749ED261025BEBD6ACF99CB81162AE8929E3D744 (void);
+// 0x0000001A System.Void DataHandler::LoadItems()
+extern void DataHandler_LoadItems_m5546F1EFDF981E4E7B5B708889AC290AED656FA4 (void);
 // 0x0000001B System.Void DataHandler::CreateButton()
 extern void DataHandler_CreateButton_m2B7BD253BA7C66AF567BBCF47524C297C98B99C1 (void);
 // 0x0000001C System.Void DataHandler::SetFurniture(System.Int32)
@@ -139,7 +139,7 @@ static Il2CppMethodPointer s_methodPointers[50] =
 	DataHandler_get_Instance_m9FCB9BE5B72BE8E6D3594F83D3E6040876CB5530,
 	DataHandler_ReceivedMessage_m14ED245F369FBD2A95B6DB5B72B7A84F37ADE8F0,
 	DataHandler_Awake_mE1CAD485223F24AFF4062AD256DF383C50DD04CE,
-	DataHandler_LoadItems_m749ED261025BEBD6ACF99CB81162AE8929E3D744,
+	DataHandler_LoadItems_m5546F1EFDF981E4E7B5B708889AC290AED656FA4,
 	DataHandler_CreateButton_m2B7BD253BA7C66AF567BBCF47524C297C98B99C1,
 	DataHandler_SetFurniture_m7A8DE720E9659E775A97E3EA194C91D791E30957,
 	DataHandler_GetFurniture_m330B3752088E7276C7C867A3F40547803AA23BBE,
@@ -192,7 +192,7 @@ static const int32_t s_InvokerIndices[50] =
 	14200,
 	6257,
 	7907,
-	6257,
+	7907,
 	7907,
 	6222,
 	7773,
