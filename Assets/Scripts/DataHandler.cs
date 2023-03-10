@@ -2,14 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.AddressableAssets;
+//using System.Threading.Tasks;
 
 public class DataHandler : MonoBehaviour
 {
     private GameObject furniture;
     [SerializeField]
+    private ButtonManager buttonPrefab;
+    [SerializeField]
+    private GameObject buttonContainer;
+    [SerializeField]
     private List<Item> items;
     public Text textElement;
     public string ReceivedMessagFromAndroid;
+    //[SerializeField]
+    // private string label;
+
+    private int curretn_id = 0;
 
     private static DataHandler instance;
     public static DataHandler Instance
@@ -33,6 +43,8 @@ public class DataHandler : MonoBehaviour
     private void Awake()
     {
         LoadItems();
+        // await Get(label);
+        CreateButton();
     }
 
     void LoadItems()
@@ -44,9 +56,36 @@ public class DataHandler : MonoBehaviour
         }
     }
 
+
+    void CreateButton()
+    {
+        foreach (Item i in items)
+        {
+            ButtonManager bm = Instantiate(buttonPrefab, buttonContainer.transform);
+            bm.ItemId = curretn_id;
+            bm.ButtonTexture = i.itemImage;
+            curretn_id++;
+        }
+    }
+
+    public void SetFurniture(int id)
+    {
+        furniture = items[id].itemPrefab;
+    }
+
     public GameObject GetFurniture()
     {
-        furniture = items[0].itemPrefab;
         return furniture;
     }
+
+    /*  public async Task Get(string label)
+      {
+          var locations = await Addressables.LoadResourceLocationsAsync(label).Task;
+          foreach(var location in locations)
+          {
+              var obj = await Addressables.LoadAssetAsync<Item>(location).Task;
+              items.Add(obj);
+          }
+      }
+    */
 }
