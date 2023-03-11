@@ -746,7 +746,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 7e-45, z: 9.1835e-41, w: 0}
+  m_BoundingSphereOverride: {x: 4.5904e-41, y: -8.7007907e-26, z: 4.5904e-41, w: -2.7948532}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -930,7 +930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   textElement: {fileID: 1828601336}
-  ReceivedMessagFromAndroid: 
+  ReceivedMessageFromAndroid: 
 --- !u!4 &1513178538
 Transform:
   m_ObjectHideFlags: 0
@@ -1063,10 +1063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7e81d3120eeb64dad02191cff0ba7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycaster: {fileID: 0}
-  eventSystem: {fileID: 0}
-  selectionPoint: {fileID: 0}
-  backBtn: {fileID: 65284395}
 --- !u!1 &1828601335
 GameObject:
   m_ObjectHideFlags: 0

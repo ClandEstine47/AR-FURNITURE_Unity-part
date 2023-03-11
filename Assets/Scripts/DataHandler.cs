@@ -9,7 +9,7 @@ public class DataHandler : MonoBehaviour
     [SerializeField]
     private List<Item> items;
     public Text textElement;
-    public string ReceivedMessagFromAndroid;
+    public string ReceivedMessageFromAndroid;
 
     private static DataHandler instance;
     public static DataHandler Instance
@@ -26,18 +26,19 @@ public class DataHandler : MonoBehaviour
     public void ReceivedMessage(string message)
     {
         Debug.Log("Received message: " + message);
-        ReceivedMessagFromAndroid = message;
+        ReceivedMessageFromAndroid = message;
         textElement.text = message;
+        LoadItems(ReceivedMessageFromAndroid);
     }
 
-    private void Awake()
+    public void Start()
     {
-        LoadItems();
+        //LoadItems(ReceivedMessageFromAndroid);
     }
 
-    void LoadItems()
+    void LoadItems(string ObjLocation)
     {
-        var items_obj = Resources.LoadAll("Items", typeof(Item));
+        var items_obj = Resources.LoadAll("Items/" + ObjLocation, typeof(Item));
         foreach (var item in items_obj)
         {
             items.Add(item as Item);
