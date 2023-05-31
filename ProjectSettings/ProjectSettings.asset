@@ -194,6 +194,9 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> Mausam
+=======
 >>>>>>> Mausam
   metroInputSource: 0
   wsaTransparentSwapchain: 0

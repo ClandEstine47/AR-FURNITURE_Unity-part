@@ -32,6 +32,9 @@ public class InputManager : ARBaseGestureInteractable
 
     public GameObject UI;
     public GameObject CrossHair;
+<<<<<<< HEAD
+>>>>>>> Mausam
+=======
 >>>>>>> Mausam
 
     // Start is called before the first frame update
@@ -116,6 +119,9 @@ public class InputManager : ARBaseGestureInteractable
         CrossHair.SetActive(true);
     }
 
+<<<<<<< HEAD
+>>>>>>> Mausam
+=======
 >>>>>>> Mausam
     // Update is called once per frame
 

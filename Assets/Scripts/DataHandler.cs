@@ -16,11 +16,15 @@ public class DataHandler : MonoBehaviour
     private List<Item> items;
     public Text textElement;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public string ReceivedMessagFromAndroid;
     //[SerializeField]
     // private string label;
 
     private int curretn_id = 0;
+=======
+    public string ReceivedMessageFromAndroid;
+>>>>>>> Mausam
 =======
     public string ReceivedMessageFromAndroid;
 >>>>>>> Mausam
@@ -48,9 +52,13 @@ public class DataHandler : MonoBehaviour
     public void Start()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         LoadItems();
         // await Get(label);
         CreateButton();
+=======
+        //LoadItems(ReceivedMessageFromAndroid);
+>>>>>>> Mausam
 =======
         //LoadItems(ReceivedMessageFromAndroid);
 >>>>>>> Mausam
