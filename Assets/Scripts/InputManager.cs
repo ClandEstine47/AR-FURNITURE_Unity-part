@@ -33,6 +33,9 @@ public class InputManager : ARBaseGestureInteractable
     public GameObject UI;
     public GameObject CrossHair;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Mausam
+=======
 >>>>>>> Mausam
 =======
 >>>>>>> Mausam
@@ -120,6 +123,9 @@ public class InputManager : ARBaseGestureInteractable
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Mausam
+=======
 >>>>>>> Mausam
 =======
 >>>>>>> Mausam
