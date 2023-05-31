@@ -4,6 +4,8 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.Interaction.Toolkit.AR;
 using UnityEngine.UI;
+using System.IO;
+using System.Collections;
 
 public class InputManager : ARBaseGestureInteractable
 {
@@ -19,6 +21,18 @@ public class InputManager : ARBaseGestureInteractable
     public List<GameObject> furnitures = new List<GameObject>();
     [SerializeField]
     public Button deleteBtn;
+<<<<<<< HEAD
+=======
+    [SerializeField]
+    public Button placeFurnitureBtn;
+    [SerializeField]
+    public Button backBtn;
+    [SerializeField]
+    public Button ScreenshotBtn;
+
+    public GameObject UI;
+    public GameObject CrossHair;
+>>>>>>> Mausam
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +85,38 @@ public class InputManager : ARBaseGestureInteractable
         }
     }
 
+<<<<<<< HEAD
+=======
+    public void QuitUnity()
+    {
+        Application.Quit();
+    }
+
+    public void TakeScreenshot()
+    {
+        UI.SetActive(false);
+        CrossHair.SetActive(false);
+        StartCoroutine("Screenshot");
+    }
+
+    private IEnumerator Screenshot()
+    {
+        yield return new WaitForEndOfFrame();
+        Texture2D texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+
+        texture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+        texture.Apply();
+
+        string name = "Screenshot_ARFurniture" + System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".png";
+
+        NativeGallery.SaveImageToGallery(texture, "AR Furniture", name);
+
+        Destroy(texture);
+        UI.SetActive(true);
+        CrossHair.SetActive(true);
+    }
+
+>>>>>>> Mausam
     // Update is called once per frame
 
     void FixedUpdate()
